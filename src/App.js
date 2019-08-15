@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import "./App.css";
 import PhotoCard from './components/PhotoCard.js';
 
 function App() {
   const [data, setData] = useState({});
+  useEffect(() => {
+
+  }, [])
   
-  axios.get("view-source:https://api.nasa.gov/planetary/apod?api_key=RlVu0xWKQ2LGh5zKsgeSnpciQJvSxmA4e0OxOBqc")
+  axios.get("https://api.nasa.gov/planetary/apod?api_key=RlVu0xWKQ2LGh5zKsgeSnpciQJvSxmA4e0OxOBqc")
   .then(res => {
     console.log(res.data);
     setData(res.data);
